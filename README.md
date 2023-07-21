@@ -11,8 +11,6 @@
 
 - 📫 How to reach me **sahil.mehta8520@gmail.com**
 
-- 📄 Know about my experiences **https://drive.google.com/file/d/1ef7baq7LJ9u2O40PPt6YoCP1C9z0LggO/view?usp=sharing**
-
 <h3 align="left">Connect with me:</h3>
 <p align="left">
 <a href="https://twitter.com/mehta4sahil" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="mehta4sahil" height="30" width="40" /></a>
