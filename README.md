@@ -1,7 +1,7 @@
 <h1 align="center">Hey🤗 Saahil here.</h1>
-<h3 align="center">An upstanding and passionate data-scientist!</h3>
+<h3 align="center">An upstanding and passionate data engineer!</h3>
 
-- 🔭 I’m currently working for **Publicis Groupe**
+- 🔭 I’m currently working for **Publicis Groupe UK**
 
 - 💬 Ask me about **python/data science landscape/tech in general!**
 
