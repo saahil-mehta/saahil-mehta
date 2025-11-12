@@ -40,6 +40,6 @@ Apple Vision ML + LLMs turn handwritten cards into structured outcomes.
 
 ## Contact
 
-**Email:** saahil.mehta8520@gmail.com
+**Email:** self@saahil.co.uk
 **LinkedIn:** [linkedin.com/in/saahil-mehta](https://linkedin.com/in/saahil-mehta)
 **Portfolio:** [saahil-mehta.github.io](https://saahil-mehta.github.io)
