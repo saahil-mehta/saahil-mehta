@@ -17,7 +17,7 @@ Disney+ Hotstar data lake. Cut reporting from 2 days to 2 hours.
 
 ## Projects
 
-**[knowsee.framer.ai](https://knowsee.framer.ai)** – RAG platform for enterprise knowledge
+**[knowsee.co.uk](https://knowsee.co.uk)** – RAG platform for enterprise knowledge
 Ingests docs, screenshots, emails with eval suites to catch hallucinations.
 
 **MERL Volunteer Work** – Museum visitor insight engine
