@@ -8,8 +8,8 @@
 <line x1="48" x2="1152" y1="44" y2="44" stroke="#e3e7eb"/>
 <text x="48" y="80" class="d" font-size="20" fill="#0f1419">Orca</text>
 <text x="102.80000000000001" y="80" class="s" font-size="13" fill="#6b7280">South Pole · Production</text>
-<text x="48" y="104" class="s" font-size="14.5" fill="#4b5563">South Pole's enterprise AI assistant, open to all 501</text>
-<text x="48" y="124" class="s" font-size="14.5" fill="#4b5563">employees.</text>
+<text x="48" y="104" class="s" font-size="14.5" fill="#4b5563">South Pole's enterprise AI assistant, open to the whole</text>
+<text x="48" y="124" class="s" font-size="14.5" fill="#4b5563">company.</text>
 <rect x="500.00" y="86.0" width="5.28" height="20" rx="2" fill="#e9ecef"/>
 <rect x="507.28" y="86.0" width="5.28" height="20" rx="2" fill="#e9ecef"/>
 <rect x="514.56" y="86.0" width="5.28" height="20" rx="2" fill="#e9ecef"/>
