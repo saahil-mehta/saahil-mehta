@@ -1,4 +1,4 @@
-name: Render status graphics
+name: Render profile README
 
 on:
   schedule:
@@ -19,16 +19,17 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - run: pip install pillow fonttools
       - name: Render from saahil.co.uk/status.json
-        run: python scripts/render_status.py
-      - name: Commit when the graphics changed
+        run: python scripts/render_readme.py
+      - name: Commit when anything changed
         run: |
-          if git diff --quiet -- assets; then
+          if git diff --quiet -- assets README.md; then
             echo "no change"
             exit 0
           fi
-          git config user.name "Saahil Mehta (status render)"
+          git config user.name "Saahil Mehta (profile render)"
           git config user.email "self@saahil.co.uk"
-          git add assets
-          git commit -m "chore: re-render status graphics from saahil.co.uk"
+          git add assets README.md
+          git commit -m "chore: re-render the profile README from saahil.co.uk"
           git push
