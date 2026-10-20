@@ -3,7 +3,7 @@
     python scripts/render_readme.py                       # fetch the live JSON
     python scripts/render_readme.py --source status.json  # or a local file
 
-Writes README.md and assets/banner-{light,dark}.svg. The banner carries the statement in
+Writes README.md, assets/banner-{light,dark}.svg and assets/platform-{light,dark}.svg. The banner carries the statement in
 Mona Sans with the vermilion underline drawn once, the role line, and the featured systems'
 stills embedded as data URIs, so it renders the same wherever GitHub proxies it. The README
 below it is plain Markdown in the site's voice. Needs Pillow for the still thumbnails.
@@ -150,38 +150,25 @@ def banner(data: dict, theme: str, thumbs: dict[str, str]) -> str:
 """
 
 
-DIAGRAM = """## How it fits together
+def diagram_section(data: dict) -> str:
+    """The platform diagram the site renders, embedded in both schemes from the files
+    status.json links; nothing is drawn here. Absent from an older status.json, the section is left out."""
+    d = (data.get("diagrams") or {}).get("platform")
+    if not d:
+        return ""
+    for theme in ("dark", "light"):
+        (ASSETS / f"platform-{theme}.svg").write_bytes(fetch(d[theme]))
+    note = (data.get("ecosystem") or {}).get("note") or ""
+    return f"""## {d["title"]}
 
-```mermaid
-flowchart LR
-  classDef sys fill:#f2efe9,stroke:#8a857d,color:#15140f,rx:6,ry:6
-  classDef build fill:#fff1ec,stroke:#c8350d,color:#15140f,rx:6,ry:6
-  classDef people fill:#ffffff,stroke:#b3aea5,color:#15140f,rx:6,ry:6
+{d["lede"]}
 
-  Sources[Source systems]:::people
-  Core[Data Marts Core<br/>orchestration, dbt]:::sys
-  Marts[(Data marts)]:::sys
-  Sem[Orca Semantics<br/>definitions and owners]:::build
-  Vis[Orca Visuals<br/>dashboards as code]:::build
-  Orca[Orca<br/>the AI assistant]:::sys
-  Access[Data Access Governance<br/>self-service access]:::sys
-  Cost[Cost Deep Dive<br/>spend and anomalies]:::sys
-  People((The company)):::people
-  Plan[Data Foundation Plan<br/>the strategy]:::sys
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/platform-dark.svg">
+  <img alt="{escape(d["title"])}. {escape(d["lede"])}" src="assets/platform-light.svg" width="100%">
+</picture>
 
-  Sources --> Core --> Marts
-  Marts --> Sem --> Orca
-  Sem --> Vis
-  Marts --> Orca
-  Access -. grants read access .-> Marts
-  People --> Orca
-  People --> Vis
-  People --> Access
-  Cost -. watches .-> Core
-  Plan -. sets the roadmap for .-> Sem & Core & Access & Vis
-```
-
-Every query Orca runs executes as the signed-in person, so access control decides what each user sees; the semantic layer supplies meaning, never data.
+{note}
 """
 
 
@@ -206,7 +193,9 @@ def readme(data: dict) -> str:
         out.append(f"- **{name}** · {p['category']}, {STATE[p['status']].lower()} {since}. {p['opening']}")
     out.append(f"\nAll systems, with how each is built: [{host}/projects]({o['url']}/projects).\n")
     out.append(f"## Still shipping\n\n{n['ledes']['shipping'].replace('live from GitHub', 'drawn by GitHub beneath this page')}\n")
-    out.append(DIAGRAM)
+    section = diagram_section(data)
+    if section:
+        out.append(section)
     out.append(f"## Experience\n\n{n['ledes']['experience']}\n")
     for r in roles[:3]:
         where = f"{r['org']}{', ' + r['unit'] if r.get('unit') else ''}"

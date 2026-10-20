@@ -35,36 +35,14 @@ Commits over the last twelve months, drawn by GitHub beneath this page.
 
 ## How it fits together
 
-```mermaid
-flowchart LR
-  classDef sys fill:#f2efe9,stroke:#8a857d,color:#15140f,rx:6,ry:6
-  classDef build fill:#fff1ec,stroke:#c8350d,color:#15140f,rx:6,ry:6
-  classDef people fill:#ffffff,stroke:#b3aea5,color:#15140f,rx:6,ry:6
+The systems in production, what each one does and what flows between them.
 
-  Sources[Source systems]:::people
-  Core[Data Marts Core<br/>orchestration, dbt]:::sys
-  Marts[(Data marts)]:::sys
-  Sem[Orca Semantics<br/>definitions and owners]:::build
-  Vis[Orca Visuals<br/>dashboards as code]:::build
-  Orca[Orca<br/>the AI assistant]:::sys
-  Access[Data Access Governance<br/>self-service access]:::sys
-  Cost[Cost Deep Dive<br/>spend and anomalies]:::sys
-  People((The company)):::people
-  Plan[Data Foundation Plan<br/>the strategy]:::sys
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/platform-dark.svg">
+  <img alt="How it fits together. The systems in production, what each one does and what flows between them." src="assets/platform-light.svg" width="100%">
+</picture>
 
-  Sources --> Core --> Marts
-  Marts --> Sem --> Orca
-  Sem --> Vis
-  Marts --> Orca
-  Access -. grants read access .-> Marts
-  People --> Orca
-  People --> Vis
-  People --> Access
-  Cost -. watches .-> Core
-  Plan -. sets the roadmap for .-> Sem & Core & Access & Vis
-```
-
-Every query Orca runs executes as the signed-in person, so access control decides what each user sees; the semantic layer supplies meaning, never data.
+Owners are named once, in the semantic layer, and access approvals, quality routing and Orca's context all reuse them.
 
 ## Experience
 
