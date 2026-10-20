@@ -19,7 +19,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install pillow fonttools
+      - run: pip install pillow fonttools brotli
       - name: Render from saahil.co.uk/status.json
         run: python scripts/render_readme.py
       - name: Commit when anything changed
