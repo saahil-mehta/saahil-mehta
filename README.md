@@ -19,8 +19,8 @@ I wrote the data strategy the executive committee adopted, and I commit code mos
 The systems in production at South Pole, designed and built by me with the team.
 
 - **Orca** · AI assistant, in production since Jun 2026. South Pole's enterprise AI assistant, open to the whole company. Deep research over the web and company data, South Pole-format documents, decks and sales proposals, scheduled runs, memory, and sharing with version history.
-- **Orca Semantics** · Semantic layer, in build since Jul 2026. A governed semantic layer on self-hosted OpenMetadata: plain-English definitions, certified metric SQL, a glossary and named owners per domain, all version controlled.
-- **Orca Visuals** · Visualisation, in build since Aug 2026. The visualisation layer on top of Orca Semantics: dashboards and metrics defined as code against the certified definitions, so a chart and Orca's answer agree.
+- **Orca Semantics** · Semantic layer, in production since Jul 2026. A governed semantic layer on self-hosted OpenMetadata: plain-English definitions, certified metric SQL, a glossary and named owners per domain, all version controlled.
+- **Orca Visuals** · Visualisation, in production since Aug 2026. The visualisation layer on top of Orca Semantics: dashboards and metrics defined as code against the certified definitions, so a chart and Orca's answer agree.
 - **Data Marts Core** · Orchestration, in production since Sep 2026. Orchestration for 1,800+ dbt models, migrated from dbt Cloud to self-hosted Dagster on GKE in three weeks.
 - **Data Foundation Plan** · Strategy, in production since Aug 2026. The company data strategy, written, costed and taken to ExCo: seven workstreams to 2028 covering the semantic layer, orchestration, visualisation, the AI platform, data quality at scale, access governance and SLAs.
 - **Data Access Governance** · Governance, in production since Oct 2026. Self-service data access. A request names the access group and the reason, mails the data owner, and opens a Terraform pull request that grants the group read access, through an org-owned GitHub App.
