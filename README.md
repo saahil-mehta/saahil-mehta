@@ -26,6 +26,7 @@ The systems in production at South Pole, designed and built by me with the team.
 - **Data Access Governance** · Governance, in production since Oct 2026. Self-service data access. A request names the access group and the reason, mails the data owner, and opens a Terraform pull request that grants the group read access, through an org-owned GitHub App.
 - **Cost Deep Dive** · FinOps, in production since Jan 2025. FinOps across 195 GCP projects and 60 services: spend by app, by service, by day, with P99 anomaly detection that emails me when an app breaks its own baseline.
 - **Enterprise Data Platform Migration** · Platform, in production since Mar 2024. Migrated 18,000+ cloud resources from Pulumi to modular Terraform. Standardised IAM, networking, and policy-as-code so five business units now share one platform without stepping on each other.
+- **[Oriel](https://oriel-stories.co.uk)** · Side project, in production since Oct 2026. I created Oriel, an independent animated storytelling channel that brings philosophy and psychology into everyday life.
 
 All systems, with how each is built: [saahil.co.uk/projects](https://saahil.co.uk/projects).
 
